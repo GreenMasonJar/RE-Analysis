@@ -64,12 +64,21 @@ function App() {
       <InputBox label = "Property Insurance: " name="insurance" value={formData.insurance} onChange={handleInputChange}/> <br/>
       <InputBox label = "Capital Expenditures: " name="capEx" value={formData.capEx} onChange={handleInputChange}/> <br/>
       <InputBox label = "HOA Fees: " name="hoa" value={formData.hoa} onChange={handleInputChange}/> <br/>
-      <InputBox label = "Property Management: " name="management" value={formData.management} onChange={handleInputChange}/> <br/>
+      <InputBox label = "Property Management (%): " name="management" value={formData.management} onChange={handleInputChange}/> <br/>
       <SubmitButton value="submit" label="Submit or something" onClick={handlesSubmit}/>
       Total Price of Home: ${results.homePrice} <br/>
       Down Payment: ${results.downPayment} <br/>
       Loan Amount: ${results.loan} <br/>
-      Monthly Mortgage payment: ${results.mortgagePayment}
+      Monthly Mortgage payment: ${results.mortgagePayment}<br/>
+      Maintenance: ${results.maintenance} <br/>
+      Recomended Minimum Savings: ${results.savings} <br/>
+      <h2>
+        Cash Flow: ${results.cashFlow}/month <br/>
+        ROI (Return on Investment): {results.roi}% <br/>
+        Cap Rate: {results.capRate}% <br/>
+        Cash on Cash return: {results.COC}% <br/>
+      </h2>
+
     </div>
   );
 }
