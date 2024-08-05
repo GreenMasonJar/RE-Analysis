@@ -1,7 +1,8 @@
 function InputBox(props) {
+    
     return(
-        <label>Name or something:
-            <input name="myInput" /> 
+        <label>{props.label}
+            <input name={props.name} value={props.value} onChange = {props.onChange}/>
         </label>
         
     )
