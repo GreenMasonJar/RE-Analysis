@@ -48,32 +48,10 @@ function App() {
     setTest(data.message);
     console.log(data.message); 
   };
-
-//   const getData = async(url) => {
-//     const newData = await fetch(url, {
-//         method: 'POST',
-//         body: JSON.stringify({title: 'Test test 123'}),
-//         headers: {
-//             'content-type': 'application/json',
-//             'Accept': 'application/json'
-//         }
-//     })
-//     .then(res => res.json());
-//     console.log("this is a test");
-//     setTest(newData);
-//     console.log(newData);
-// }
-
-
-// React.useEffect(() => {
-//   getData('/rental');
-// }, [])
   
-  
+
   return (
     <div>
-      {test} <br/>
-      {formData.homePrice} <br/>
       {/* <InputBox value={homePrice} label="House Price" onChange={handleTextChange}/> */}
       <InputBox label = "Home Price: " name="homePrice" value={formData.homePrice} onChange={handleInputChange}/> <br/>
       <InputBox label = "Down Payment (%): " name="downPayment" value={formData.downPayment} onChange={handleInputChange}/><br/>
