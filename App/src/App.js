@@ -1,6 +1,5 @@
 import './App.css';
 import React from 'react'
-import {useEffect} from 'react';
 import InputBox from './Components/inputBox';
 import SubmitButton from './Components/submitButton';
 
@@ -69,6 +68,7 @@ function App() {
       <SubmitButton value="submit" label="Submit or something" onClick={handlesSubmit}/>
       Total Price of Home: ${results.homePrice} <br/>
       Down Payment: ${results.downPayment} <br/>
+      Loan Amount: ${results.loan} <br/>
       Monthly Mortgage payment: ${results.mortgagePayment}
     </div>
   );

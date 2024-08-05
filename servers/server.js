@@ -20,6 +20,7 @@ app.post('/rental', (req, res) => {
     const data = {
       homePrice: propertyData.homePrice, 
       downPayment: dp, 
+      loan: loan,
       mortgagePayment: mortgage
     }
 
