@@ -5,7 +5,7 @@ import InputBox from './Components/inputBox';
 import SubmitButton from './Components/submitButton';
 
 function App() {
-  const [test, setTest] = React.useState([]);
+  const [test, setTest] = React.useState("");
   const[formData, setFormData] = React.useState({
     homePrice: "",
     downPayment: "",
@@ -34,32 +34,45 @@ function App() {
 
   function handlesSubmit() {
     console.log("Click!");
+    getData('/rental');
   }
 
   const getData = async(url) => {
-    const newData = await fetch(url, {
-        method: 'POST',
-        body: JSON.stringify(number),
-        headers: {
-            'content-type': 'application/json',
-            'Accept': 'application/json'
-        }
-    })
-    .then(res => res.json());
-    console.log("this is a test");
-    setTest(newData);
-    console.log(newData);
-}
+    const requestOptions = {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json'},
+      body: JSON.stringify(formData)
+    };
+    const response = await fetch(url, requestOptions)
+    const data = await response.json()
+    setTest(data.message);
+    console.log(data.message); 
+  };
+
+//   const getData = async(url) => {
+//     const newData = await fetch(url, {
+//         method: 'POST',
+//         body: JSON.stringify({title: 'Test test 123'}),
+//         headers: {
+//             'content-type': 'application/json',
+//             'Accept': 'application/json'
+//         }
+//     })
+//     .then(res => res.json());
+//     console.log("this is a test");
+//     setTest(newData);
+//     console.log(newData);
+// }
 
 
-React.useEffect(() => {
-  getData('/users-list');
-}, [])
+// React.useEffect(() => {
+//   getData('/rental');
+// }, [])
   
   
   return (
     <div>
-      {test.message} <br/>
+      {test} <br/>
       {formData.homePrice} <br/>
       {/* <InputBox value={homePrice} label="House Price" onChange={handleTextChange}/> */}
       <InputBox label = "Home Price: " name="homePrice" value={formData.homePrice} onChange={handleInputChange}/> <br/>
