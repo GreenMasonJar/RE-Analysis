@@ -2,6 +2,7 @@ import './App.css';
 import React from 'react'
 import InputBox from './Components/inputBox';
 import SubmitButton from './Components/submitButton';
+import RentalForm from './Components/rentalForm/RentalForm';
 
 function App() {
   const [test, setTest] = React.useState("");
@@ -55,7 +56,7 @@ function App() {
   return (
     <div>
       {/* <InputBox value={homePrice} label="House Price" onChange={handleTextChange}/> */}
-      <InputBox label = "Home Price: " name="homePrice" value={formData.homePrice} onChange={handleInputChange}/> <br/>
+      {/* <InputBox label = "Home Price: " name="homePrice" value={formData.homePrice} onChange={handleInputChange}/> <br/>
       <InputBox label = "Down Payment (%): " name="downPayment" value={formData.downPayment} onChange={handleInputChange}/><br/>
       <InputBox label = "Interest Rate: " name="interestRate" value={formData.interestRate} onChange={handleInputChange}/> <br/>
       <InputBox label = "Term of Mortgage: " name="mortgageTerm" value={formData.mortgageTerm} onChange={handleInputChange}/> <br/>
@@ -65,7 +66,9 @@ function App() {
       <InputBox label = "Capital Expenditures: " name="capEx" value={formData.capEx} onChange={handleInputChange}/> <br/>
       <InputBox label = "HOA Fees: " name="hoa" value={formData.hoa} onChange={handleInputChange}/> <br/>
       <InputBox label = "Property Management (%): " name="management" value={formData.management} onChange={handleInputChange}/> <br/>
+
       <SubmitButton value="submit" label="Submit or something" onClick={handlesSubmit}/>
+      
       Total Price of Home: ${results.homePrice} <br/>
       Down Payment: ${results.downPayment} <br/>
       Loan Amount: ${results.loan} <br/>
@@ -77,8 +80,8 @@ function App() {
         ROI (Return on Investment): {results.roi}% <br/>
         Cap Rate: {results.capRate}% <br/>
         Cash on Cash return: {results.COC}% <br/>
-      </h2>
-
+      </h2>  */}
+      <RentalForm/>
     </div>
   );
 }
